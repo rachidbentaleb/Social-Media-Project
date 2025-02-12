@@ -32,7 +32,7 @@ class Utilisateur extends Authenticatable
     // Relationships
     public function posts()
     {
-        return $this->hasMany(posts::class);
+        return $this->hasMany(post::class);
     }
 
     public function likes()
@@ -40,8 +40,8 @@ class Utilisateur extends Authenticatable
         return $this->hasMany(likes::class);
     }
 
-    public function comments()
+    public function commentaires()
     {
-        return $this->hasMany(commentaires::class);
+        return $this->hasMany(commentaire::class);
     }
 }

@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\posts;
-use App\Http\Requests\StorepostsRequest;
-use App\Http\Requests\UpdatepostsRequest;
+use App\Models\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -21,7 +19,7 @@ class PostsController extends Controller
 
         return inertia('posts/Index', [
                 'posts' => $posts
-            ]);
+        ]);
     }
 
     /**
@@ -54,7 +52,7 @@ class PostsController extends Controller
 
         $validatedData['utilisateur_id'] = Auth::id();
 
-        Posts::create($validatedData);
+        post::create($validatedData);
 
         return redirect('dashboard')->with('success', 'Post created successfully!');
     }
@@ -62,7 +60,7 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(posts $posts)
+    public function show(post $posts)
     {
         //
     }
@@ -70,7 +68,7 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(posts $post) {
+    public function edit(post $post) {
         sleep(1);
         return inertia('posts/Edit', [
             'post' => $post, 
@@ -80,7 +78,7 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, posts $post)
+    public function update(Request $request, post $post)
     {
 
         $validatedData = $request->validate([
@@ -118,7 +116,7 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(posts $post){
+    public function destroy(post $post){
 
         $post->delete();
 

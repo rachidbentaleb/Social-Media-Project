@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentairesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostsController;
@@ -20,3 +21,7 @@ Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth
 
 
 Route::resource('posts', PostsController::class);
+
+Route::resource('commentaires', CommentairesController::class);
+Route::get('/posts/{post}/comments', [CommentairesController::class, 'show'])->name('posts.show.comments');
+Route::post('/posts/{post}/comments', [CommentairesController::class, 'store'])->name('posts.comments.store');

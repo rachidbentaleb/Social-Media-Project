@@ -35,6 +35,8 @@ export default function Dashboard({posts}) {
                         {post.image && (
                             <img src={`/${post.image}`} alt={post.contenu} width="100" />
                         )}
+                        <br />
+                        <Link href={`/posts/${post.id}/comments`}>Voir les commentaires</Link>
                         <hr />
                         <br />
                     </li>

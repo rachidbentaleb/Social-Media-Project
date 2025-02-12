@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\likes;
 use App\Http\Requests\StorelikesRequest;
 use App\Http\Requests\UpdatelikesRequest;
+use Request;
 
 class LikesController extends Controller
 {
@@ -27,7 +28,7 @@ class LikesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorelikesRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +52,7 @@ class LikesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatelikesRequest $request, likes $likes)
+    public function update(Request $request, likes $likes)
     {
         //
     }

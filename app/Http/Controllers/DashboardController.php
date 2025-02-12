@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\posts;
+use App\Models\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 
@@ -15,7 +14,7 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $posts = posts::with('utilisateur')->get();
+        $posts = post::with('utilisateur')->get();
         return inertia('Dashboard', [
             'posts' => $posts,
             'user' => $user]);
