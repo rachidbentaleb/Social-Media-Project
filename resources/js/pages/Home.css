@@ -50,7 +50,6 @@ img.backlines {
 .signupcontainer{
     background-color: #FFF6FF;
     width: 500px;
-    height: 480px;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -113,6 +112,8 @@ img.backlines {
     background-color: #1E1C26;
     color: #FFF6FF;
     border: none;
+    display: flex;
+    justify-content: center;
 }
 
 .signupcontainer .call-to-action .signup a{
