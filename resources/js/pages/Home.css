@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: mongobold;
+    src: url('../../../public/fonts/black-mango-bold.ttf');
+}
+@font-face {
+    font-family: mongoregular;
+    src: url('../../../public/fonts/black-mango-regular.ttf');
+}
+
+body {
+    background-color: #1E1C26;
+}
+
+img.backlines {
+    position: fixed;
+    bottom: -80%;
+    z-index: -2;
+}
+.home{
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.headline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #FFF6FF;
+}
+
+.headline h1{
+    font-size: 42px;
+    font-family: mongoregular;
+}
+.headline p{
+    font-size: 18px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+}
+
+.signupcontainer{
+    background-color: #FFF6FF;
+    width: 500px;
+    height: 480px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    color: #1E1C26;
+    gap: 12px;
+}
+
+.signupcontainer .logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.signupcontainer .titledescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding:0px 60px;
+}
+
+.signupcontainer .titledescription h2{
+    font-size: 24px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+.signupcontainer .titledescription p{
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.signupcontainer .call-to-action{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px 90px;
+    margin-bottom: 20px;
+}
+
+.signupcontainer .call-to-action button{
+    height: 50px;
+    border-radius: 40px;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+    border: 1px solid #1E1C26;
+    background: none;
+}
+.signupcontainer .call-to-action button a{
+    color: #1E1C26;
+    text-decoration: none;
+}
+
+.signupcontainer .call-to-action .signup{
+    background-color: #1E1C26;
+    color: #FFF6FF;
+    border: none;
+}
+
+.signupcontainer .call-to-action .signup a{
+    text-decoration: none;
+    color: #FFF6FF;
+}
+
+
+.signupcontainer .call-to-action .google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.signupcontainer .conditions{
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    color: #1E1C26;
+    padding: 0px 60px;
+    text-align: center;
+}
+
+.signupcontainer .conditions span{
+    text-decoration: underline
+}
