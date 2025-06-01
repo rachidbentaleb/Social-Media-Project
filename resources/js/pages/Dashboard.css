@@ -1,166 +1,180 @@
-/* Dashboard.css */
+/* Container */
 .dashboard-container {
-    display: flex;
-    min-height: 100vh;
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f8fa;
+  min-height: 100vh;
+  color: #14171a;
 }
 
+/* Header */
 .dashboard-header {
-    width: 250px;
-    padding: 20px;
-    border-right: 1px solid #2f3336;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
 }
 
-.dashboard-header h1 {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #e7e9ea;
+/* User info (left) */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.profile-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7643B6; /* Purple border */
 }
 
-.nav-links li {
-    margin-bottom: 15px;
+h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
 }
 
-.nav-links a {
-    color: #e7e9ea;
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 30px;
-    transition: background-color 0.2s;
+.user-name {
+  color: #7643B6; /* Purple text for user name */
 }
 
-.nav-links a:hover {
-    background-color: #16181c;
+/* Navigation (center) */
+.dashboard-nav {
+  display: flex;
+  gap: 36px;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
+.nav-link {
+  color: #59DBBF; /* Teal color */
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #7643B6; /* On hover, purple */
+  border-bottom-color: #7643B6; /* Purple underline */
+  outline: none;
+}
+
+/* Logout button (right) */
 .logout-btn {
-    background-color: #1d9bf0;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.2s;
-    width: 80%;
+  background: transparent;
+  border: 2px solid #59DBBF; /* Teal border */
+  color: #59DBBF;
+  padding: 8px 20px;
+  font-weight: 700;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
 }
 
-.logout-btn:hover {
-    background-color: #1a8cd8;
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: #59DBBF;
+  color: white;
+  outline: none;
 }
 
+/* Posts section */
 .posts-section {
-    margin-left: 290px;
-    width: 600px;
-    border-right: 1px solid #2f3336;
-    min-height: 100vh;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 24px;
 }
 
 .posts-section h2 {
-    padding: 15px 20px;
-    font-size: 20px;
-    border-bottom: 1px solid #2f3336;
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(12px);
-    z-index: 10;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #7643B6;
 }
 
+/* Post list */
 .posts-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .post-item {
-    padding: 15px 20px;
-    border-bottom: 1px solid #2f3336;
-    transition: background-color 0.2s;
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s ease;
 }
 
 .post-item:hover {
-    background-color: #080808;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
 }
 
 .post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.post-profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #59DBBF; /* Teal border */
 }
 
 .post-header h3 {
-    margin: 0;
-    font-size: 15px;
-    color: #e7e9ea;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  flex-grow: 1;
 }
 
 .post-header time {
-    margin-left: 10px;
-    font-size: 14px;
-    color: #71767b;
+  font-size: 0.8rem;
+  color: #555;
 }
 
 .post-content {
-    margin: 10px 0;
-    font-size: 15px;
-    line-height: 1.5;
-    color: #e7e9ea;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #444;
 }
 
 .post-image {
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 10px;
-    border: 1px solid #2f3336;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .comments-link {
-    display: inline-block;
-    color: #1d9bf0;
-    text-decoration: none;
-    font-size: 14px;
-    margin-top: 10px;
-    transition: text-decoration 0.2s;
+  text-decoration: none;
+  color: #7643B6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: text-decoration 0.2s ease;
 }
 
-.comments-link:hover {
-    text-decoration: underline;
-}
-
-/* Style pour le bouton de création de post (ajoutez-le si nécessaire) */
-.create-post-btn {
-    background-color: #1d9bf0;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    transition: background-color 0.2s;
-}
-
-.create-post-btn:hover {
-    background-color: #1a8cd8;
+.comments-link:hover,
+.comments-link:focus {
+  text-decoration: underline;
+  outline: none;
 }

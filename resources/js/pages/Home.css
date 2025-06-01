@@ -1,197 +1,136 @@
-/* Home.css */
 .home-container {
-    display: flex;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    overflow: hidden;
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f0fa;
+  color: #3b3b3b;
 }
 
-.left-panel {
-    flex: 1;
-    background-color: #000;
-    background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 5%;
-    position: relative;
-    overflow: hidden;
+.home-container .left-panel {
+  flex: 1;
+  background: #7643B6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 40px;
 }
 
-.left-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+.home-container .left-panel h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: white;
 }
 
-.left-panel h1 {
-    font-size: 64px;
-    font-weight: 900;
-    margin-bottom: 40px;
-    position: relative;
-    color: #fff;
-    line-height: 1.2;
-    word-wrap: break-word;
+.home-container .left-panel p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  max-width: 350px;
 }
 
-.left-panel p {
-    font-size: 32px;
-    font-weight: 700;
-    position: relative;
-    color: #fff;
-    word-wrap: break-word;
+.home-container .right-panel {
+  flex: 1;
+  background: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.right-panel {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    height: 100vh;
-    position: relative;
+.home-container .logo {
+  width: 120px;
+  margin-bottom: 40px;
 }
 
-.logo {
-    width: 50px;
-    margin-bottom: 30px;
+.home-container h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #7643B6;
 }
 
-.right-panel h2 {
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: 10px;
+.home-container .subtitle {
+  font-size: 1rem;
+  margin-bottom: 32px;
+  color: #777;
+  text-align: center;
 }
 
-.subtitle {
-    font-size: 16px;
-    color: #71767b;
-    margin-bottom: 30px;
+.home-container .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 30px;
 }
 
-.actions {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.home-container .btn {
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.btn {
-    padding: 12px 16px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
+.home-container .btn.violet {
+  background-color: #7643B6;
+  color: white;
 }
 
-.btn.violet {
-    background-color: #9254FF;
-    color: white;
+.home-container .btn.violet:hover {
+  background-color: #5a2f90;
 }
 
-.btn.violet:hover {
-    background-color: #1a8cd8;
+.home-container .btn.outline {
+  background-color: transparent;
+  color: #7643B6;
+  border: 2px solid #7643B6;
 }
 
-.btn.outline {
-    background-color: transparent;
-    color: #9254FF;
-    border: 1px solid #536471;
+.home-container .btn.outline:hover {
+  background-color: #7643B6;
+  color: white;
 }
 
-.btn.outline:hover {
-    background-color: rgba(29, 155, 240, 0.1);
+.home-container .btn.google {
+  background-color: #f5f5f5;
+  color: #444;
+  border-radius: 30px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  font-weight: 600;
 }
 
-.btn.google {
-    background-color: transparent;
-    color: #e7e9ea;
-    border: 1px solid #536471;
-    display: flex;
-    gap: 8px;
+.home-container .btn.google img {
+  width: 18px;
+  height: 18px;
 }
 
-.btn.google:hover {
-    background-color: rgba(255, 255, 255, 0.03);
+.home-container .btn.google:hover {
+  background-color: #e0e0e0;
 }
 
-.btn.google img {
-    width: 20px;
-    height: 20px;
+.home-container .terms {
+  font-size: 0.85rem;
+  color: #999;
+  max-width: 320px;
+  text-align: center;
+  line-height: 1.4;
 }
 
-.terms {
-    font-size: 11px;
-    color: #71767b;
-    margin-top: 20px;
-    line-height: 1.4;
-}
-
-.terms span {
-    color: #9254FF;
-    cursor: pointer;
-}
-
-.terms span:hover {
-    text-decoration: underline;
-}
-
-/* Responsive design */
-@media (max-width: 1000px) {
-    .home-container {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-        overflow-y: auto;
-    }
-    
-    .left-panel {
-        display: none;
-    }
-    
-    .right-panel {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        height: auto;
-        min-height: 100vh;
-    }
-}
-
-@media (max-width: 500px) {
-    .right-panel {
-        padding: 20px 15px;
-    }
-    
-    .right-panel h2 {
-        font-size: 24px;
-    }
-    
-    .subtitle {
-        font-size: 14px;
-    }
-    
-    .btn {
-        padding: 10px 14px;
-        font-size: 14px;
-    }
+.home-container .terms span {
+  color: #7643B6;
+  cursor: pointer;
+  text-decoration: underline;
 }

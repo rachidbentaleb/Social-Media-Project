@@ -1,6 +1,6 @@
 import { useForm } from "@inertiajs/react";
 import logo from '../../../../public/images/LOGO.svg';
-import "./Create.css";
+import './Create.css'; // Assuming you have a CSS file for styling
 
 export default function Create() {
     const { data, setData, post, errors, processing } = useForm({

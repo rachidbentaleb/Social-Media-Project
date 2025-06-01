@@ -1,147 +1,127 @@
-/* CreatePost.css */
-body {
-    background-color: #000;
-    color: #e7e9ea;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.create-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #14171a;
 }
 
-h1 {
-    font-size: 20px;
-    padding: 15px 16px;
-    margin: 0;
-    font-weight: 700;
-    border-bottom: 1px solid #2f3336;
+.create-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7643B6; /* Purple */
+  margin-bottom: 6px;
 }
 
-p {
-    color: #71767b;
-    padding: 10px 16px;
-    margin: 0;
-    font-size: 15px;
-    border-bottom: 1px solid #2f3336;
+.create-subtitle {
+  font-size: 1.1rem;
+  color: #59DBBF; /* Teal */
+  margin-bottom: 24px;
 }
 
-form {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-textarea {
-    width: 100%;
-    min-height: 150px;
-    background-color: transparent;
-    border: none;
-    color: #e7e9ea;
-    font-size: 20px;
-    resize: none;
-    padding: 10px 0;
-    outline: none;
-    font-family: inherit;
-    margin-bottom: 15px;
+.create-textarea {
+  resize: vertical;
+  min-height: 120px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-family: inherit;
+  transition: border-color 0.25s ease;
 }
 
-textarea::placeholder {
-    color: #71767b;
+.create-textarea:focus {
+  border-color: #7643B6; /* Purple on focus */
+  outline: none;
+  box-shadow: 0 0 6px #7643B6aa;
 }
 
-.file-upload-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+.create-error {
+  color: #d93025;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: -12px;
+  margin-bottom: 8px;
 }
 
-.file-upload-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    color: #1d9bf0;
+.create-image-preview {
+  text-align: center;
 }
 
-.file-upload-label:hover {
-    background-color: rgba(29, 155, 240, 0.1);
+.create-preview-image {
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
 }
 
-.file-upload-label svg {
-    width: 20px;
-    height: 20px;
+.create-file-upload {
+  display: flex;
+  justify-content: flex-start;
 }
 
-input[type="file"] {
-    display: none;
+.create-file-upload-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #59DBBF; /* Teal */
+  font-weight: 700;
+  border: 2px solid #59DBBF;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.preview-image {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 15px;
-    margin-top: 10px;
-    border: 1px solid #2f3336;
+.create-file-upload-label:hover {
+  background-color: #59DBBF;
+  color: white;
 }
 
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid #2f3336;
-    padding-top: 15px;
+.create-file-input {
+  display: none;
 }
 
-button[type="submit"] {
-    background-color: #1d9bf0;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.create-upload-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  fill: currentColor;
 }
 
-button[type="submit"]:hover {
-    background-color: #1a8cd8;
+.create-button-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
-button[type="submit"]:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.create-submit-btn {
+  background-color: #7643B6; /* Purple */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.error {
-    color: #f4212e;
-    font-size: 13px;
-    margin: 5px 0 15px 0;
+.create-submit-btn:disabled {
+  background-color: #a78bcc;
+  cursor: not-allowed;
 }
 
-/* Icônes Twitter-like */
-.icon-button {
-    color: #1d9bf0;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.2s;
-}
-
-.icon-button:hover {
-    background-color: rgba(29, 155, 240, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-    textarea {
-        font-size: 18px;
-        min-height: 120px;
-    }
-    
-    button[type="submit"] {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
+.create-submit-btn:not(:disabled):hover,
+.create-submit-btn:not(:disabled):focus {
+  background-color: #5a2e8c;
+  outline: none;
 }

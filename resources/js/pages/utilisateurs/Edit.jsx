@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "@inertiajs/react";
+import './Edit.css'; // We'll create this next
 
 export default function Edit({ utilisateur }) {
     const { data, setData, post, errors, processing } = useForm({
@@ -10,96 +11,86 @@ export default function Edit({ utilisateur }) {
         mdp: '',
         mdp_confirmation: '',
         bio: utilisateur.bio,
-        photodeprofile: null, 
+        photodeprofile: null,
     });
 
     function submit(e) {
         e.preventDefault();
         post(`/utilisateurs/${utilisateur.id}`, {
             preserveScroll: true,
-            onSuccess: () => console.log('Form submitted successfully'),
-            onError: (errors) => console.log('Form submission errors', errors),
         });
     }
 
     return (
-        <>
-            <h1>Edit your profile</h1>
-            <form onSubmit={submit} encType="multipart/form-data">
-                <label htmlFor="nom">Nom:</label>
-                <input
-                    type="text"
-                    value={data.nom}
-                    onChange={(e) => setData('nom', e.target.value)}
-                />
-                <br />
-                {errors.nom && <div className="error">{errors.nom}</div>}
-                <br />
-                <label htmlFor="prenom">Prénom:</label>
-                <input
-                    type="text"
-                    value={data.prenom}
-                    onChange={(e) => setData('prenom', e.target.value)}
-                />
-                <br />
-                {errors.prenom && <div className="error">{errors.prenom}</div>}
-                <br />
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    value={data.email}
-                    onChange={(e) => setData('email', e.target.value)}
-                />
-                <br />
-                {errors.email && <div className="error">{errors.email}</div>}
-                <br />
-                <label htmlFor="mdp">Mot de passe:</label>
-                <input
-                    type="password"
-                    value={data.mdp}
-                    onChange={(e) => setData('mdp', e.target.value)}
-                />
-                <br />
-                {errors.mdp && <div className="error">{errors.mdp}</div>}
-                <br />
-                <label htmlFor="mdp_confirmation">Confirmer mot de passe:</label>
-                <input
-                    type="password"
-                    value={data.mdp_confirmation}
-                    onChange={(e) => setData('mdp_confirmation', e.target.value)}
-                />
-                <br />
-                {errors.mdp_confirmation && <div className="error">{errors.mdp_confirmation}</div>}
-                <br />
-                <label htmlFor="bio">Bio:</label>
-                <br />
-                <textarea
-                    name="bio"
-                    rows="10"
-                    value={data.bio}
-                    onChange={(e) => setData('bio', e.target.value)}
-                />
-                <br />
-                {errors.bio && <div className="error">{errors.bio}</div>}
-                <br />
-                <br />
-                {utilisateur.photodeprofile && (
-                    <img src={`/${utilisateur.photodeprofile}`} alt="Profile" width="100" />
-                )}
-                <br />
-                <label htmlFor="photodeprofile">Profile Picture:</label>
-                <input
-                    type="file"
-                    onChange={(e) => {
-                        const file = e.target.files[0];
-                        if (file) setData('photodeprofile', file);
-                    }}
-                />
-                <br />
-                {errors.photodeprofile && <div className="error">{errors.photodeprofile}</div>}
-                <br />
-                <button type="submit" disabled={processing}>Update</button>
+        <div className="edit-container">
+            <h1 className="edit-title">Modifier votre profil</h1>
+            <form onSubmit={submit} encType="multipart/form-data" className="edit-form">
+                {[
+                    { label: 'Nom', name: 'nom', type: 'text', value: data.nom },
+                    { label: 'Prénom', name: 'prenom', type: 'text', value: data.prenom },
+                    { label: 'Email', name: 'email', type: 'email', value: data.email },
+                    { label: 'Mot de passe', name: 'mdp', type: 'password', value: data.mdp },
+                    { label: 'Confirmer mot de passe', name: 'mdp_confirmation', type: 'password', value: data.mdp_confirmation },
+                ].map(({ label, name, type, value }) => (
+                    <div key={name} className="edit-field">
+                        <label htmlFor={name}>{label}:</label>
+                        <input
+                            id={name}
+                            type={type}
+                            value={value}
+                            onChange={e => setData(name, e.target.value)}
+                            className={errors[name] ? 'input-error' : ''}
+                        />
+                        {errors[name] && <p className="error-message">{errors[name]}</p>}
+                    </div>
+                ))}
+
+                <div className="edit-field">
+                    <label htmlFor="bio">Bio:</label>
+                    <textarea
+                        id="bio"
+                        rows="6"
+                        value={data.bio}
+                        onChange={e => setData('bio', e.target.value)}
+                        className={errors.bio ? 'input-error' : ''}
+                    />
+                    {errors.bio && <p className="error-message">{errors.bio}</p>}
+                </div>
+
+                <div className="edit-field">
+                    <label>Photo de profil actuelle:</label>
+                    {utilisateur.photodeprofile ? (
+                        <img
+                            src={`/${utilisateur.photodeprofile}`}
+                            alt="Profile"
+                            className="profile-preview"
+                        />
+                    ) : (
+                        <p className="no-photo">Aucune photo de profil</p>
+                    )}
+                </div>
+
+                <div className="edit-field">
+                    <label htmlFor="photodeprofile" className="file-label">
+                        Choisir une nouvelle photo
+                        <input
+                            id="photodeprofile"
+                            type="file"
+                            accept="image/*"
+                            onChange={e => {
+                                const file = e.target.files[0];
+                                if (file) setData('photodeprofile', file);
+                            }}
+                            className="file-input"
+                        />
+                    </label>
+                    {errors.photodeprofile && <p className="error-message">{errors.photodeprofile}</p>}
+                </div>
+
+                <button type="submit" className="edit-submit" disabled={processing}>
+                    {processing ? 'Mise à jour...' : 'Mettre à jour'}
+                </button>
             </form>
-        </>
+        </div>
     );
 }

@@ -1,4 +1,5 @@
 import { Link, useForm } from "@inertiajs/react";
+import './Show.css';
 
 export default function Show({ post, comments }) {
     const { data, setData, post: submit, errors } = useForm({

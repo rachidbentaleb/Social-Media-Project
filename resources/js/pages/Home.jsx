@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
-import "./Home.css";
 import logo from "../../../public/images/logo.svg";
 import googleIcon from "../../../public/images/google-icone.svg";
+import './Home.css'; // Assuming you have a CSS file for styling
 
 export default function Home() {
   return (

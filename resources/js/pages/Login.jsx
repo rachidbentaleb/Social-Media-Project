@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "@inertiajs/react";
-import './Login.css';
+import './Login.css'; // Assuming you have a CSS file for styling
 
 export default function Login() {
   const { data, setData, post, errors, processing } = useForm({
