@@ -1,0 +1,147 @@
+/* CreatePost.css */
+body {
+    background-color: #000;
+    color: #e7e9ea;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 20px;
+    padding: 15px 16px;
+    margin: 0;
+    font-weight: 700;
+    border-bottom: 1px solid #2f3336;
+}
+
+p {
+    color: #71767b;
+    padding: 10px 16px;
+    margin: 0;
+    font-size: 15px;
+    border-bottom: 1px solid #2f3336;
+}
+
+form {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    background-color: transparent;
+    border: none;
+    color: #e7e9ea;
+    font-size: 20px;
+    resize: none;
+    padding: 10px 0;
+    outline: none;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+textarea::placeholder {
+    color: #71767b;
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #1d9bf0;
+}
+
+.file-upload-label:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.file-upload-label svg {
+    width: 20px;
+    height: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 15px;
+    margin-top: 10px;
+    border: 1px solid #2f3336;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #2f3336;
+    padding-top: 15px;
+}
+
+button[type="submit"] {
+    background-color: #1d9bf0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1a8cd8;
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #f4212e;
+    font-size: 13px;
+    margin: 5px 0 15px 0;
+}
+
+/* Icônes Twitter-like */
+.icon-button {
+    color: #1d9bf0;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    textarea {
+        font-size: 18px;
+        min-height: 120px;
+    }
+    
+    button[type="submit"] {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}

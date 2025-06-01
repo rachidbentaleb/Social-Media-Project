@@ -1,0 +1,166 @@
+/* Dashboard.css */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.dashboard-header {
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #2f3336;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+}
+
+.dashboard-header h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #e7e9ea;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 15px;
+}
+
+.nav-links a {
+    color: #e7e9ea;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+    transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: #16181c;
+}
+
+.logout-btn {
+    background-color: #1d9bf0;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+    width: 80%;
+}
+
+.logout-btn:hover {
+    background-color: #1a8cd8;
+}
+
+.posts-section {
+    margin-left: 290px;
+    width: 600px;
+    border-right: 1px solid #2f3336;
+    min-height: 100vh;
+}
+
+.posts-section h2 {
+    padding: 15px 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #2f3336;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+}
+
+.posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #2f3336;
+    transition: background-color 0.2s;
+}
+
+.post-item:hover {
+    background-color: #080808;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-header h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #e7e9ea;
+}
+
+.post-header time {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #71767b;
+}
+
+.post-content {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e7e9ea;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+    border: 1px solid #2f3336;
+}
+
+.comments-link {
+    display: inline-block;
+    color: #1d9bf0;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: text-decoration 0.2s;
+}
+
+.comments-link:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le bouton de création de post (ajoutez-le si nécessaire) */
+.create-post-btn {
+    background-color: #1d9bf0;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.create-post-btn:hover {
+    background-color: #1a8cd8;
+}

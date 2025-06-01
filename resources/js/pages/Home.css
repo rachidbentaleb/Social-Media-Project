@@ -1,143 +1,197 @@
-*{
+/* Home.css */
+.home-container {
+    display: flex;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    background-color: #000;
+    background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left-panel h1 {
+    font-size: 64px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    position: relative;
+    color: #fff;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.left-panel p {
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+.right-panel {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-@font-face {
-    font-family: mongobold;
-    src: url('../../../public/fonts/black-mango-bold.ttf');
-}
-@font-face {
-    font-family: mongoregular;
-    src: url('../../../public/fonts/black-mango-regular.ttf');
+    overflow-y: auto;
+    height: 100vh;
+    position: relative;
 }
 
-body {
-    background-color: #1E1C26;
+.logo {
+    width: 50px;
+    margin-bottom: 30px;
 }
 
-img.backlines {
-    position: fixed;
-    bottom: -80%;
-    z-index: -2;
-}
-.home{
-    margin: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+.right-panel h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
-.headline{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: #FFF6FF;
-}
-
-.headline h1{
-    font-size: 42px;
-    font-family: mongoregular;
-}
-.headline p{
-    font-size: 18px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 200;
-}
-
-.signupcontainer{
-    background-color: #FFF6FF;
-    width: 500px;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    padding: 18px;
-    color: #1E1C26;
-    gap: 12px;
-}
-
-.signupcontainer .logo{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 18px;
-}
-
-.signupcontainer .titledescription{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding:0px 60px;
-}
-
-.signupcontainer .titledescription h2{
-    font-size: 24px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 300;
-    text-align: center;
-}
-
-.signupcontainer .titledescription p{
-    font-size: 14px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    text-align: center;
-}
-
-.signupcontainer .call-to-action{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 0px 90px;
-    margin-bottom: 20px;
-}
-
-.signupcontainer .call-to-action button{
-    height: 50px;
-    border-radius: 40px;
-    font-family: "Outfit", sans-serif;
-    text-decoration: none;
-    font-size: 15px;
-    border: 1px solid #1E1C26;
-    background: none;
-}
-.signupcontainer .call-to-action button a{
-    color: #1E1C26;
-    text-decoration: none;
-}
-
-.signupcontainer .call-to-action .signup{
-    background-color: #1E1C26;
-    color: #FFF6FF;
-    border: none;
-    display: flex;
-    justify-content: center;
-}
-
-.signupcontainer .call-to-action .signup a{
-    text-decoration: none;
-    color: #FFF6FF;
-}
-
-
-.signupcontainer .call-to-action .google{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-}
-
-.signupcontainer .conditions{
+.subtitle {
     font-size: 16px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 300;
-    color: #1E1C26;
-    padding: 0px 60px;
-    text-align: center;
+    color: #71767b;
+    margin-bottom: 30px;
 }
 
-.signupcontainer .conditions span{
-    text-decoration: underline
+.actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.btn.violet {
+    background-color: #9254FF;
+    color: white;
+}
+
+.btn.violet:hover {
+    background-color: #1a8cd8;
+}
+
+.btn.outline {
+    background-color: transparent;
+    color: #9254FF;
+    border: 1px solid #536471;
+}
+
+.btn.outline:hover {
+    background-color: rgba(29, 155, 240, 0.1);
+}
+
+.btn.google {
+    background-color: transparent;
+    color: #e7e9ea;
+    border: 1px solid #536471;
+    display: flex;
+    gap: 8px;
+}
+
+.btn.google:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.btn.google img {
+    width: 20px;
+    height: 20px;
+}
+
+.terms {
+    font-size: 11px;
+    color: #71767b;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.terms span {
+    color: #9254FF;
+    cursor: pointer;
+}
+
+.terms span:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 1000px) {
+    .home-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .left-panel {
+        display: none;
+    }
+    
+    .right-panel {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .right-panel {
+        padding: 20px 15px;
+    }
+    
+    .right-panel h2 {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
 }
